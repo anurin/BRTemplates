@@ -10,7 +10,7 @@ BOOST_AUTO_TEST_SUITE(Rectangle_Methods)
 
 BOOST_AUTO_TEST_CASE_TEMPLATE(Rectangle_Constructor, Type, test_types){
 	Rectangle<Type> r;
-	BOOST_CHECK_EQUAL(r.GetLeftTopX(), 1);
+	BOOST_CHECK_EQUAL(r.GetLeftTopX(), 1);	
 	BOOST_CHECK_EQUAL(r.GetLeftTopY(), 1);
 	BOOST_CHECK_EQUAL(r.GetRightBottomX(), -1);
 	BOOST_CHECK_EQUAL(r.GetRightBottomY(), -1);

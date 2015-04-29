@@ -238,10 +238,12 @@ Rectangle<Type> & Rectangle<Type>::operator=(const Rectangle &rect) {
 
 template <typename Type>
 Rectangle<Type> & Rectangle<Type>::operator+=(const Rectangle &rect) {
-	if (Empty() || rect.Empty()){
-		SetCorrection(false);
+	if (Empty()){
+		*this = rect;
 		return *this;
 	}
+	if (rect.Empty())
+		return *this;
 
 	leftTop.x = leftTop.x < rect.GetLeftTopX() ? leftTop.x : rect.GetLeftTopX();
 	leftTop.y = leftTop.y > rect.GetLeftTopY() ? leftTop.y : rect.GetLeftTopY();
