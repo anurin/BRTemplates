@@ -106,11 +106,9 @@ bool RectanglesCollection<Type>::ChangeSize(int newSize) {
 
 template<typename Type>
 Rectangle<Type> RectanglesCollection<Type>::OuterRectangle() const{
-	Rectangle<Type> sum = rectangles[0];
-	for (auto i = 0; i < size; i++){
-		if (!rectangles[i].Empty())
-			sum += rectangles[i];
-	}
+	Rectangle<Type> sum;
+	for (auto i = 0; i < size; i++)
+		sum += rectangles[i];
 	return sum;
 }
 #endif // !RECTANGLES_COLLECTION_H_
